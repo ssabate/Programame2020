@@ -34,40 +34,60 @@ public class EsotericoDiabolico {
                 valors[i] = Integer.parseInt(nums[i]);
             }
 
-            boolean magic = true;
+            boolean diabolic = true, esoteric=true;
             int cm = 0;
-            for (int i = 0; i < n * n && magic; i = i + n) {
+            for (int i = 0; i < n * n && diabolic; i = i + n) {
                 int suma = 0;
-                for (int j = 0; j < n && magic; j++) {
+                for (int j = 0; j < n && diabolic; j++) {
                     suma += valors[i + j];
                     try {
                         if (!tots[valors[i + j] - 1]) {
                             tots[valors[i + j] - 1] = true;
                         } else {
-                            magic = false;
+                            diabolic = false;
                         }
                     } catch (Exception e) {
-                        magic = false;
+                        esoteric = false;
                     }
                 }
                 if (cm == 0) {
                     cm = suma;
                 } else {
-                    magic = (cm == suma);
+                    diabolic = (cm == suma);
                 }
 
             }
-            for (int i = 0; i < n && magic; i++) {
+            for (int i = 0; i < n && diabolic; i++) {
                 int suma = 0;
-                for (int j = 0; j < n * n && magic; j = j + n) {
+                for (int j = 0; j < n * n && diabolic; j = j + n) {
                     suma += valors[i + j];
                 }
-                magic = (cm == suma);
+                diabolic = (cm == suma);
 
             }
-            if (magic) {
-                System.out.println("DIABOLICO");
-            }
+            
+            if (diabolic) {
+           
+                 int cm2=4*cm/n;
+                 if(esoteric=(cm2==valors[0]+valors[n-1]+valors[n*(n-1)]+valors[valors.length-1])){
+                    if(n%2==0){
+                        //TODO
+                        //La suma de las dos casillas centrales de cada uno de los cuatro laterales suman el doble de la constante mágica 2 (2 · CM2)
+                        //La suma de las cuatro casillas centrales da como resultado la constante mágica 2.
+                        esoteric=(2*cm2==valors[n/2]+valors[n/2-1]+valors[n*n/2]+valors[n*(n/2-1)]+valors[n*n/2-1]+valors[n*(n/2+1)-1]+valors[n*(n-1)+n/2]+valors[n*(n-1)+n/2-1]) &&
+                                (cm2==valors[n*(n/2-1)+n/2]+valors[n*(n/2-1)+n/2-1]+valors[n*n/2+n/2]+valors[n*n/2+n/2-1]);
+                    }else{
+                        //TODO
+                        //La suma de las cifras de las cuatro casillas de la mitad de los laterales suman la constante mágica 2.
+                        //Si se multiplica el valor de la casilla central por 4, se obtiene la constante mágica 2.
+                        esoteric=(cm2==4*valors[n*n/2+n/2+1]) && (cm2==valors[n/2]+valors[n*n/2+1]+valors[n*(n/2+1)-1]+valors[n*(n-1)+n/2]);
+                    }
+                 
+                 }   
+                
+                if(esoteric) System.out.println("ESOTERICO");
+                else System.out.println("DIABOLICO");
+            } else System.out.println("NO");
 
         } while (true);
 
