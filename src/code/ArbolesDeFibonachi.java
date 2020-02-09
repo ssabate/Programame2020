@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author joan
  */
 public class ArbolesDeFibonachi {
-    static int fill = 0;
+    static String fill = "";
     
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
@@ -32,26 +32,23 @@ public class ArbolesDeFibonachi {
         } while (true);
         for (int i = 0; i < llista.size(); i++) {
             arbFib(llista.get(i));
-            System.out.println("====");
+            System.out.format("====\n");
         }
-        System.out.println("");
     }
     public static void arbFib (int n) {
-        for (int j = 0; j < fill; j++) {
-            System.out.format("   ");
-        }
+        String linea = "";
         if (n < 0){
            return;
         }
         if (n == 0 || n == 1)  {
-            System.out.println(n);      
+            System.out.format("%s%d\n", fill, n);      
             return;
         }
-        System.out.println(fib(n));
-        fill ++;
+        System.out.format("%s%d\n", fill, fib(n));
+        fill += "   ";
         arbFib (n-2);
         arbFib (n-1);
-        fill = 0;
+        fill = "";
     }
     
     public static int fib (int n) {
