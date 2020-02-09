@@ -8,24 +8,27 @@ package code;
 import java.util.Scanner;
 
 
-
-/**
- *
- * @author alumne
- */
-public class ReescribiendoFracciones {
+public class Ascensor {
+    
+    public static int diference(int x, int y) {
+        if (x > y) return x - y;
+        return y - x;
+    }
+    
     public static void main(String[] args) {
-        
         Scanner ent = new Scanner(System.in);
-        int z = 0;
+        int x,y;
         while (true) {
             int sum = 0;
-            z = ent.nextInt();
-            for (int y = 1; y < 2*z+1; y++) {
-                if ((y != z) && (z*y)/(y-z) > 0 && (z*y)%(y-z) == 0) sum += 1;
+            x = ent.nextInt();
+            y = ent.nextInt();
+            while (y != -1) {
+                sum += diference(x, y);
+                x = y;
+                y = ent.nextInt();
             }
             System.out.println(sum);
         }
-        
+            
     }
 }
