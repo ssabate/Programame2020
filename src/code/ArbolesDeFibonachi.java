@@ -23,7 +23,7 @@ public class ArbolesDeFibonachi {
 
             int n = Integer.parseInt(linia);
             
-            if (n == -1){
+            if (n < 0){
                 break;
             }
             
@@ -34,6 +34,7 @@ public class ArbolesDeFibonachi {
             arbFib(llista.get(i));
             System.out.println("====");
         }
+        System.out.println("");
     }
     public static void arbFib (int n) {
         for (int j = 0; j < fill; j++) {
