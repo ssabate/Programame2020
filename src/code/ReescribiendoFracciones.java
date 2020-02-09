@@ -21,8 +21,9 @@ public class ReescribiendoFracciones {
         while (true) {
             int sum = 0;
             z = ent.nextInt();
-            for (int y = 0; y != z && y < 2*z+1; y++) {
-                if ((z*y)%(y-z) == 0) sum += 1;
+            for (int y = 1; y < 2*z+1; y++) {
+                boolean prova = (y != z) && (z*y)/(y-z) > 0 && (z*y)%(y-z) == 0;
+                if ((y != z) && (z*y)/(y-z) > 0 && (z*y)%(y-z) == 0) sum += 1;
             }
             System.out.println(sum);
         }
