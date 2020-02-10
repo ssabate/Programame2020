@@ -13,6 +13,7 @@ import java.util.Scanner;
  *
  * @author alumne
  */
+// Link https://www.aceptaelreto.com/problem/statement.php?id=226
 public class ReescribiendoFracciones {
     public static void main(String[] args) {
         

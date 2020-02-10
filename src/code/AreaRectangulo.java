@@ -11,6 +11,7 @@ import java.util.Scanner;
  *
  * @author alumne
  */
+// Link https://www.aceptaelreto.com/problem/statement.php?id=164
 public class AreaRectangulo {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);

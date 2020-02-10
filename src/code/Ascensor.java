@@ -7,7 +7,7 @@ package code;
 
 import java.util.Scanner;
 
-
+// Link https://www.aceptaelreto.com/problem/statement.php?id=156
 public class Ascensor {
     
     public static int diference(int x, int y) {
