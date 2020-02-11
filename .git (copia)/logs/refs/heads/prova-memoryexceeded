@@ -1,0 +1,2 @@
+0000000000000000000000000000000000000000 121420b35f25604346eded5a31830b0dbab9718c Santi <ssabate@iesebre.com> 1580926176 +0100	branch: Created from branch refs/heads/master
+121420b35f25604346eded5a31830b0dbab9718c dfb059ec3742441cbcbfeae0aded434cd6d6ad0a Santi Sabate <ssabate@iesebre.com> 1580988722 +0100	commit: Fet en un TreeMap, continua donant el mateix problema de memory limit exceeded
