@@ -17,15 +17,20 @@ public class Ascensor {
     
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
-        int x,y;
+        boolean ascensor = false;
+        int x, y;
         while (true) {
             int sum = 0;
-            x = ent.nextInt();
             y = ent.nextInt();
-            while (y != -1) {
-                sum += diference(x, y);
+            if (y == -1) break;
+            while (true) {
+                ascensor = true;
                 x = y;
                 y = ent.nextInt();
+                if (y == -1) {
+                    break;
+                }
+                sum += diference(x,y);
             }
             System.out.println(sum);
         }
