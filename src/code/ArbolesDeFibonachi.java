@@ -13,15 +13,13 @@ import java.util.Scanner;
  * @author joan
  */
 public class ArbolesDeFibonachi {
-    static String fill = "";
-    
+     
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
         ArrayList<Integer> llista = new ArrayList<>();
         do {
-            String linia = ent.nextLine();
 
-            int n = Integer.parseInt(linia);
+            int n = ent.nextInt();
             
             if (n < 0){
                 break;
@@ -31,29 +29,33 @@ public class ArbolesDeFibonachi {
 
         } while (true);
         for (int i = 0; i < llista.size(); i++) {
-            arbFib(llista.get(i));
-            System.out.format("====\n");
+            arbFib(llista.get(i), 0);
+            System.out.format("====%n");
         }
     }
-    public static void arbFib (int n) {
-        String linea = "";
-        if (n < 0){
-           return;
-        }
+    public static void arbFib (int n, int nivell) {
         if (n == 0 || n == 1)  {
-            System.out.format("%s%d\n", fill, n);      
+            System.out.format("%s%d%n", espais(nivell), n);      
             return;
         }
-        System.out.format("%s%d\n", fill, fib(n));
-        fill += "   ";
-        arbFib (n-2);
-        arbFib (n-1);
-        fill = "";
+        System.out.format("%s%d%n", espais(nivell), fib(n));
+        arbFib (n-2, nivell+1);
+        arbFib (n-1, nivell+1);
     }
     
     public static int fib (int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
         return fib (n - 2) + fib (n - 1);
+    }
+    
+    public static String espais(int n){
+        String tros="   ";
+        String resultat="";
+        for (int i = 0; i < n; i++) {
+            resultat+=tros;            
+        }
+        return resultat;
+        
     }
 }

@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 abfd3b4c24ab24671fa7c8c85351ce449fceb84e Santi <ssabate@iesebre.com> 1580830027 +0100	commit (initial): Acceptat a aceptaelreto
+abfd3b4c24ab24671fa7c8c85351ce449fceb84e 79e240d0161c083726c75d0c2e9b09be4c669e46 Santi <ssabate@iesebre.com> 1580835494 +0100	commit: En procés, de moment detecta diabolics, pero no esoterics
+79e240d0161c083726c75d0c2e9b09be4c669e46 893b53d3341dc0199c8cba95a0f9bd5319ed9970 Santi <ssabate@iesebre.com> 1580894740 +0100	merge origin/master: Fast-forward
+893b53d3341dc0199c8cba95a0f9bd5319ed9970 121420b35f25604346eded5a31830b0dbab9718c Santi <ssabate@iesebre.com> 1580898637 +0100	commit: detecta bé l'exemple de l'enunciat, però quan l'executes retorna Memory limit exceeded (MLE), per tant s'ha d'eliminar algun dels vectors?? 
