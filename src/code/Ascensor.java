@@ -10,25 +10,23 @@ import java.util.Scanner;
 // Link https://www.aceptaelreto.com/problem/statement.php?id=156
 public class Ascensor {
     
-    public static int diference(int x, int y) {
-        if (x > y) return x - y;
-        return y - x;
-    }
-    
-    public static void main(String[] args) {
+      public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
-        int x,y;
-        while (true) {
-            int sum = 0;
-            x = ent.nextInt();
-            y = ent.nextInt();
-            while (y != -1) {
-                sum += diference(x, y);
-                x = y;
+        do {
+            int x, y=-2, fx;
+            if((fx = ent.nextInt())< 0) break;
+            int sum=0;
+            
+            do {
+                x = ent.nextInt();
+                if(x==-1) break;
+                sum+=Math.abs(fx-x);
                 y = ent.nextInt();
-            }
+                sum += Math.abs(x-y);
+                fx=y;
+            }while (true);
             System.out.println(sum);
-        }
+        }while (true);
             
     }
 }
