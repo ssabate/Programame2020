@@ -4,24 +4,30 @@ import java.util.Scanner;
 
 // Link https://www.aceptaelreto.com/problem/statement.php?id=533&cat=125
 public class BotellaGanadora {
-    
-      public static void main(String[] args) {
+
+    public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
-        do {
-            int x, y=-2, fx;
-            if((fx = ent.nextInt())< 0) break;
-            int sum=0;
-            
-            do {
-                x = ent.nextInt();
-                if(x==-1) break;
-                sum+=Math.abs(fx-x);
-                y = ent.nextInt();
-                sum += Math.abs(x-y);
-                fx=y;
-            }while (true);
-            System.out.println(sum);
-        }while (true);
-            
+        int numCasos;
+        if ((numCasos = ent.nextInt()) == 0) {
+            return;
+        }
+        for (int i = 0; i < numCasos; i++) {
+            int numBotelles = ent.nextInt()*8;
+            int sum = 0;
+            int ordre=1;
+            int guanyador=-1;
+            do{
+                int botActual=ent.nextInt();
+                if(botActual==-0) break;
+                sum += botActual;
+                if(sum>=numBotelles){
+                    if(guanyador==-1)  guanyador=ordre;
+                    else continue;
+                }
+                ordre++;
+            }while(true);
+            System.out.println(guanyador!=-1?guanyador:"SIGAMOS RECICLANDO");
+        }
+
     }
 }
