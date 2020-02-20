@@ -16,14 +16,13 @@ import java.util.Scanner;
 public class Sueno {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);
-        Scanner ent_str = new Scanner(System.in);
         int hora1, min1, hora2, min2, suma_minuts, h_result, min_result;
         String interval;
-        int x = ent.nextInt();
+        int x = Integer.valueOf(ent.nextLine());
         while (x != 0) {
             suma_minuts = 0;
             for (int i = 0; i < x; i++) {
-                interval = ent_str.nextLine();
+                interval = ent.nextLine();
                 hora1 = Integer.valueOf(interval.substring(0,2));
                 min1 = Integer.valueOf(interval.substring(3,5));
                 hora2 = Integer.valueOf(interval.substring(6,8));
@@ -46,7 +45,7 @@ public class Sueno {
             if (min_result < 10) System.out.print("0"+min_result);
             else System.out.print(min_result);
             System.out.println();
-            x = ent.nextInt();
+            x = Integer.valueOf(ent.nextLine());
         }
     }
 }
