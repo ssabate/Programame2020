@@ -20,7 +20,7 @@ public class AreaRectangulo {
         y = ent.nextInt();
         z = ent.nextInt();
         t = ent.nextInt();
-        while ((x < z || y < t)) {
+        while (x <= z && y <= t) {
             System.out.println((z-x) * (t-y));
             x = ent.nextInt();
             y = ent.nextInt();
