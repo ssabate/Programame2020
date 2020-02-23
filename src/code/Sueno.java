@@ -7,12 +7,6 @@ package code;
 
 import java.util.Scanner;
 
-/**
- *
- * @author alumne
- */
-// https://www.aceptaelreto.com/problem/statement.php?id=184&potw=1
-// Si se posa sueño peta per la ñ!!
 public class Sueno {
     public static void main(String[] args) {
         Scanner ent = new Scanner(System.in);

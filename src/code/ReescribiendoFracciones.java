@@ -19,9 +19,9 @@ public class ReescribiendoFracciones {
         
         Scanner ent = new Scanner(System.in);
         int z = 0;
-        while (true) {
+        for (int i = 0; i < 10; i++) {
             int sum = 0;
-            z = ent.nextInt();
+            z = Integer.valueOf(ent.nextLine());
             for (int y = 1; y < 2*z+1; y++) {
                 if ((y != z) && (z*y)/(y-z) > 0 && (z*y)%(y-z) == 0) sum += 1;
             }
